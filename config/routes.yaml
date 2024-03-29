@@ -3,3 +3,27 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+contact_list:
+    path: /contacts
+    controller: App\Controller\ContactController::index
+    methods: [GET, POST]
+
+contact_add:
+    path: /contacts/add
+    controller: App\Controller\ContactController::create
+    methods: [GET, POST]
+
+contact_edit:
+    path: /contacts/{id}/edit
+    controller: App\Controller\ContactController::edit
+    methods: [GET, POST]
+
+contact_delete:
+    path: /contacts/{id}/delete
+    controller: App\Controller\ContactController::delete
+    methods: [GET, POST]
+
+uploads:
+    path: /uploads/{filename}
+    controller: App\Controller\UploadController::show

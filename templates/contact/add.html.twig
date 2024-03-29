@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dodaj nowego użytkownika{% endblock %}
+
+{% block body %}
+<div class="container mx-auto px-4 mt-20">
+    <h1 class="mb-8 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl">Dodaj nowego użytkownika</h1>
+
+    {{ form_start(contactForm, {'attr': {'class': 'flex flex-col gap-4'}}) }}
+    {{ form_errors(contactForm) }}
+
+    {{ form_row(contactForm.firstName, {'attr': {'class': 'mt-2 block w-full px-4 py-2 leading-normal rounded-md shadow-md border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200'}, 'label': 'Imię', }) }}
+    {{ form_row(contactForm.lastName, {'attr': {'class': 'mt-2 block w-full px-4 py-2 leading-normal rounded-md shadow-md border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200'}, 'label': 'Nazwisko', }) }}
+    {{ form_row(contactForm.email, {'attr': {'class': 'mt-2 block w-full px-4 py-2 leading-normal rounded-md shadow-md border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200'}, 'label': 'Adres e-mail',}) }}
+    {{ form_row(contactForm.phoneNumber, {'attr': {'class': 'mt-2 block w-full px-4 py-2 leading-normal rounded-md shadow-md border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200'}, 'label': 'Numer telefonu',}) }}
+    {{ form_row(contactForm.file, {'attr': {'class': 'mt-2 block w-full px-4 py-2 leading-normal rounded-md shadow-md border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200'}, 'label': 'Plik',}) }}
+
+    <button type="submit" class="mt-8 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 w-fit">Dodaj uzytkownika</button>
+    {{ form_end(contactForm) }}
+
+</div>
+{% endblock %}
